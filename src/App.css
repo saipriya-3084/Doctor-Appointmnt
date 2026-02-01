@@ -1,0 +1,243 @@
+/* Page background */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #eef2f6; /* slightly darker than white */
+}
+
+/* App container */
+.app {
+  padding: 24px;
+ 
+  margin: 0 auto; 
+}
+
+/* Titles – make them truly dark */
+.title {
+  color: #1f2933; /* near-black */
+}
+
+.section-title {
+  color: #1f2933;
+}
+.search {
+  width: 100%;
+  padding: 14px 18px;
+  margin: 16px 0 24px;
+
+  background: #f1f5f9;     /* whitish grey */
+  border: none;
+  border-radius: 14px;
+
+  font-size: 15px;
+  color: #111827;
+
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+
+/* Card – pure white to pop */
+.doctor-card {
+   display: flex;   
+   flex-direction: row;    
+   height: 340px;           /* split into columns */
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+   
+}
+
+/* Doctor name – strong foreground */
+.doctor-info h3 {
+  margin-top: 16px;
+  color: #111827;
+}
+.doctor-img {
+  width: 50%;
+  
+  object-fit: cover;
+}
+.doctor-details {
+  width: 50%;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* Secondary text */
+.doctor-info p {
+  color: #6b7280;
+}
+.doctor-cards{
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+}
+.book-btn {
+  margin-top: auto;          /* pushes it to the bottom */
+  align-self: center;        /* centers horizontally */
+
+  padding: 8px 16px;         /* smaller button */
+  font-size: 14px;
+
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+/* Rating */
+.rating {
+  color: #374151;
+}
+
+/* Arrows */
+.arrow {
+  
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+
+  font-size: 26px;
+  font-weight: bold;
+  color: #1f2933;
+
+  cursor: pointer;
+  z-index: 10;
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.arrow.left {
+  left: 12px;
+}
+
+.arrow.right {
+  right: 12px;
+}
+
+.arrow:hover {
+  background: white;
+}
+/* Banner carousel */
+/* Carousel wrapper */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 20px 0 28px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* Track */
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+/* Slide */
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Image */
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.carousel-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.15)
+  );
+}
+
+/* Banner text */
+.banner-text {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+
+  /* App padding smaller on mobile */
+  .app {
+    padding: 16px;
+  }
+
+  /* Carousel shorter on mobile */
+  .carousel-container {
+    height: 160px;
+  }
+
+  /* Doctor cards stack vertically */
+  .doctor-card {
+    
+    height: auto;  
+        
+  }
+
+  /* Image becomes top section */
+  .doctor-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  /* Details full width */
+  .doctor-details {
+    width: 100%;
+    padding: 16px;
+  }
+
+  /* Center text slightly */
+  .doctor-info h3 {
+    margin-top: 0;
+  }
+
+  /* Button stays centered */
+  .book-btn {
+    align-self: center;
+    margin-top: 16px;
+  }
+
+  /* Arrows slightly smaller */
+  .arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 22px;
+  }
+}
